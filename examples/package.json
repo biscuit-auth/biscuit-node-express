@@ -1,0 +1,16 @@
+{
+  "name": "express-biscuit-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@biscuit-auth/express-biscuit": "file:..",
+    "@biscuit-auth/biscuit-wasm": "file:../../biscuit-wasm",
+    "express":"4.17.3"
+  }
+}
