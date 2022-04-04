@@ -64,3 +64,57 @@ module.exports.fact = function fact(strings, ...keys) {
 
   return fact
 }
+
+module.exports.rule = function rule(strings, ...keys) {
+  let template = ""
+  for (let i = 0; i < strings.length; i++) {
+    template += strings[i]
+
+    if(i < keys.length) {
+      template += "$"+i
+    }
+  }
+
+  let rule = biscuit.Rule.from_str(template)
+  for (let i = 0; i < keys.length; ++i) {
+    rule.set(""+i, keys[i])
+  }
+
+  return rule
+}
+
+module.exports.check = function check(strings, ...keys) {
+  let template = ""
+  for (let i = 0; i < strings.length; i++) {
+    template += strings[i]
+
+    if(i < keys.length) {
+      template += "$"+i
+    }
+  }
+
+  let check = biscuit.Check.from_str(template)
+  for (let i = 0; i < keys.length; ++i) {
+    check.set(""+i, keys[i])
+  }
+
+  return check
+}
+
+module.exports.policy = function policy(strings, ...keys) {
+  let template = ""
+  for (let i = 0; i < strings.length; i++) {
+    template += strings[i]
+
+    if(i < keys.length) {
+      template += "$"+i
+    }
+  }
+
+  let policy = biscuit.Policy.from_str(template)
+  for (let i = 0; i < keys.length; ++i) {
+    policy.set(""+i, keys[i])
+  }
+
+  return policy
+}
