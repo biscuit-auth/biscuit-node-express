@@ -45,4 +45,22 @@ module.exports = function(options) {
   return middleware;
 };
 
+module.exports.fact = function fact(strings, ...keys) {
+  let template = ""
+  for (let i = 0; i < strings.length; i++) {
+    template += strings[i]
 
+    if(i < keys.length) {
+      template += "$"+i
+    }
+
+    console.log("constructed: "+template)
+  }
+
+  let fact = biscuit.Fact.from_str(template)
+  for (let i = 0; i < keys.length; ++i) {
+    fact.set(""+i, keys[i])
+  }
+
+  return fact
+}

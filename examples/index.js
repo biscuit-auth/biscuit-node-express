@@ -1,7 +1,7 @@
 const express = require('express')
 const express_biscuit = require('@biscuit-auth/express-biscuit')
+const {fact} = require('@biscuit-auth/express-biscuit')
 const biscuit = require('@biscuit-auth/biscuit-wasm')
-//const biscuit = require('express-biscuit')
 const app = express()
 
 const privKey = "5088cc9e13f7b1433e77dab0f998eb6eeaac5cb17e9ab074ecd71f4e36682d4b"
@@ -12,9 +12,7 @@ app.get('/user/:user_id',
     publicKey: pubKey,
     policies: "check if user(1); allow if true;",
     extractor: function(req, authorizer) {
-      let fact = biscuit.Fact.from_str("user($id)")
-      fact.set("id", parseInt(req.params.user_id))
-      authorizer.add_fact(fact)
+      authorizer.add_fact(fact`user(${parseInt(req.params.user_id)})`)
     }
   }),
   function (req, res) {
