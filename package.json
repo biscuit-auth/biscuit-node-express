@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/biscuit-auth/biscuit-node-express#readme",
   "dependencies": {
-    "@biscuit-auth/biscuit-wasm": "file:../biscuit-wasm"
+    "@biscuit-auth/biscuit-wasm": "0.3.0"
   }
 }

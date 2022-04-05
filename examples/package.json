@@ -10,7 +10,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@biscuit-auth/express-biscuit": "file:..",
-    "@biscuit-auth/biscuit-wasm": "file:../../biscuit-wasm",
+    "@biscuit-auth/biscuit-wasm": "0.3.0",
     "express":"4.17.3"
   }
 }
